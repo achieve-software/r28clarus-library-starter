@@ -1,9 +1,20 @@
-import React from 'react'
+import React from "react";
+import { Logo, Menu, MenuLink, Nav } from "./Navbar.style";
 
 const Navbar = () => {
   return (
-    <div>Navbar</div>
-  )
-}
+    <Nav justify="space-between">
+      <Logo to="">Clarus Library</Logo>
 
-export default Navbar
+      <Menu>
+        <MenuLink to="/">Home</MenuLink>
+        <MenuLink to="/about">About</MenuLink>
+        <MenuLink to="/register">Register</MenuLink>
+        <MenuLink to="login">Login</MenuLink>
+        <MenuLink to="/login">Logout</MenuLink>
+      </Menu>
+    </Nav>
+  );
+};
+
+export default Navbar;
