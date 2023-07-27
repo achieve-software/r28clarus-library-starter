@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
@@ -9,13 +9,14 @@ import Register from "../pages/register/Register";
 import PrivateRouter from "./PrivateRouter";
 import About from "../pages/about/About";
 import Detail from "../pages/detail/Detail";
-import React, { useState } from "react";
+ 
 
 const AppRouter = () => {
-  const [currentUser, setCurrentUser] = useState(second);
+  const [currentUser, setCurrentUser] = useState(false);
+
   return (
     <BrowserRouter>
-      <Navbar />
+      <Navbar currentUser={currentUser} setCurrentUser={setCurrentUser} />
       <GlobalStyle />
       <Routes>
         <Route path="/" element={<Home />} />

@@ -1,12 +1,16 @@
 import React from "react";
 import { FormContainer, Header, LoginContainer, StyledButton, StyledForm, StyledInput } from "./Login.style";
+import { useNavigate } from "react-router-dom";
 
 
 const Login = ({setCurrentUSer}) => {
+  const navigate =useNavigate()
+
   const handleSubmit=(e)=> {
 e.preventdefault();
 setCurrentUSer("anthony")
-
+sessionStorage.setItem("user", "anthony");
+navigate(-1)
 
 
   }
