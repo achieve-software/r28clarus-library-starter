@@ -1,9 +1,25 @@
-import React from 'react'
+import React from "react";
+import { FormContainer, Header, LoginContainer, StyledButton, StyledForm, StyledInput } from "./Login.style";
 
-const Login = () => {
+
+const Login = ({setCurrentUSer}) => {
+  const handleSubmit=(e)=> {
+e.preventdefault();
+setCurrentUSer("anthony")
+
+
+
+  }
   return (
-    <div>Login</div>
-  )
-}
-
-export default Login
+    <LoginContainer>
+      <FormContainer>
+        <StyledForm onSubmit={handleSubmit}>
+          <Header>Login Here</Header>
+          <StyledInput type="text" placeholder="Username" />
+          <StyledInput type="password" placeholder="Password" required />
+          <StyledButton type="submit">Login</StyledButton>
+        </StyledForm>
+      </FormContainer>
+    </LoginContainer>
+  );
+};export default Login;
