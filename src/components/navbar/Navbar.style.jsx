@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import Flex from "../../styles/Flex";
 import { NavLink } from "react-router-dom";
-
 export const Nav = styled(Flex)`
   background: ${({ theme }) => theme.colors.navbarBgColor};
   padding: 1rem 2rem;
@@ -20,11 +19,9 @@ export const Menu = styled(Flex)`
     width: 100%;
     transition: all 0.3s ease-in;
     max-height: ${({ showMenu }) => (showMenu ? "300px" : "0")};
-
     overflow: hidden;
   }
 `;
-
 export const MenuLink = styled(NavLink)`
   text-align: center;
   padding: 1rem 2rem;
@@ -36,7 +33,6 @@ export const MenuLink = styled(NavLink)`
     color: ${({ theme }) => theme.colors.linkHoverColor};
   }
 `;
-
 export const HamburgerIcon = styled.div`
   display: none;
   cursor: pointer;

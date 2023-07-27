@@ -9,25 +9,26 @@ import Register from "../pages/register/Register";
 import PrivateRouter from "./PrivateRouter";
 import About from "../pages/about/About";
 import Detail from "../pages/detail/Detail";
- 
-
 const AppRouter = () => {
-  const [currentUser, setCurrentUser] = useState(false);
-
+  const [currentUser, setCurrentUser] = useState(sessionStorage.getItem("user"));
   return (
     <BrowserRouter>
       <Navbar currentUser={currentUser} setCurrentUser={setCurrentUser} />
       <GlobalStyle />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login setCurrentUser={setCurrentUser} />} />
+        <Route
+          path="/login"
+          element={
+            <Login currentUser={currentUser} setCurrentUser={setCurrentUser} />
+          }
+        />
         <Route path="/register" element={<Register />} />{" "}
         {/* <Route path="/about" element={<PrivateRouter />}>
           <Route path="" element={<About />}></Route>
-        </Route>{" "}
-        <Route path="/detail" element={<PrivateRouter />}>
+        </Route>        <Route path="/detail" element={<PrivateRouter />}>
           <Route path="" element={<Detail />}></Route>
-        </Route>{" "} */}
+        </Route> */}{" "}
         <Route element={<PrivateRouter />}>
           <Route path="/about" element={<About />} />
           <Route path="/detail" element={<Detail />} />
