@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import Flex from "../../styles/Flex";export const DetailContainer = styled(Flex)`
+import Flex from "../../styles/Flex";
+export const DetailContainer = styled(Flex)`
    flex-direction:column;
    padding: 1rem;`
 

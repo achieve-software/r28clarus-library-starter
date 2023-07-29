@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Flex from "../../styles/Flex";
+
 export const AboutContainer = styled(Flex)`
     flex-direction:column;
     line-height:2;
@@ -12,6 +13,7 @@ export const ProfileImg = styled.img`
   filter: drop-shadow(-5px 10px 10px #666);
 `;
 export const InfoContainer = styled.div`
+ background-color: #E1F1DD;
   margin: 0 2rem 1rem;
   width: 60%;
   border: 1px solid white;
