@@ -10,7 +10,10 @@ import PrivateRouter from "./PrivateRouter";
 import About from "../pages/about/About";
 import Detail from "../pages/detail/Detail";
 const AppRouter = () => {
-  const [currentUser, setCurrentUser] = useState(sessionStorage.getItem("user"));  return (
+  const [currentUser, setCurrentUser] = useState(
+    sessionStorage.getItem("user")
+  );
+  return (
     <BrowserRouter>
       <Navbar currentUser={currentUser} setCurrentUser={setCurrentUser} />
       <GlobalStyle />
@@ -18,15 +21,15 @@ const AppRouter = () => {
         <Route path="/" element={<Home />} />
         <Route
           path="/login"
-          element={
-            <Login setCurrentUser={setCurrentUser} />
-          }
+          element={<Login setCurrentUser={setCurrentUser} />}
         />
-        <Route path="/register" element={<Register />} />        {/* <Route path="/about" element={<PrivateRouter />}>
+        <Route path="/register" element={<Register />} />{" "}
+        {/* <Route path="/about" element={<PrivateRouter />}>
           <Route path="" element={<About />}></Route>
         </Route>        <Route path="/detail" element={<PrivateRouter />}>
           <Route path="" element={<Detail />}></Route>
-        </Route> */}        <Route element={<PrivateRouter />}>
+        </Route> */}
+        <Route element={<PrivateRouter />}>
           <Route path="/about" element={<About />} />
           <Route path="/detail/:id" element={<Detail />} />
         </Route>
@@ -34,4 +37,5 @@ const AppRouter = () => {
       <Footer />
     </BrowserRouter>
   );
-};export default AppRouter;
+};
+export default AppRouter;
